@@ -1,0 +1,1173 @@
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* ESTO MATA EL SCROLL HORIZONTAL */
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'NombreDeTuFuente', 'Montserrat', Arial, sans-serif !important;
+   
+}
+
+/* Esto hace que el movimiento sea elegante y no un salto brusco */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Evita que el encabezado tape el inicio de la sección al saltar */
+section {
+    scroll-margin-top: 90px; /* Ajusta este número según el alto de tu menú */
+}
+
+
+* {
+    box-sizing: border-box; /* Asegura que el padding no estire las cajas */
+}
+
+/*Este codigo evita que se vaya todo al demonio fuera de rango en las imagenes y textos no borrar por nada*/
+img {
+    max-width: 100%; /* Ninguna imagen puede ser más ancha que su caja */
+    height: auto;
+    display: block;
+}
+
+/* Específicamente para tus imágenes del Hero */
+.img-mano, .img-objetos {
+    width: 45%; /* O el porcentaje que quieras para que compartan fila */
+    max-width: 1000px; /* Tamaño máximo para que no se vean gigantes */
+    height: auto;
+}
+.hero, .steps-grid, .features-grid {
+    display: flex;
+    flex-wrap: nowrap; /* Mantiene la fila */
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden; /* Corta cualquier excedente */
+    align-items: center;
+    justify-content: space-around; /* Reparte el espacio equitativamente */
+}
+
+/* Ajusta el contenido de adentro para que se encoja */
+.hero-content, .feature-card, .step-item {
+    flex: 1 1 auto; /* Permite que se encojan para caber */
+    min-width: 0;   /* Clave para que Flexbox pueda comprimir el texto */
+    padding: 10px;
+}
+
+
+
+/* =========================================
+   1. RESET Y REGLAS UNIVERSALES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* EVITA EL SCROLL HORIZONTAL DE RAÍZ */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================================
+   2. ENCABEZADO (ESTILO ESCRITORIO)
+   ========================================= */
+/* --- HEADER FIJO Y LIMPIO --- */
+.p4e-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 5%;
+    height: 60px; /* Le damos una altura fija para controlar el espacio exacto */
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    
+    /* CAMBIO CLAVE AQUÍ */
+    position: fixed;   /* Cambiado de sticky a fixed */
+    top: 0;
+    left: 0;           /* Asegura que empiece desde la izquierda */
+    width: 100%;       /* Para que ocupe todo el ancho */
+    box-sizing: border-box; /* Para que el padding no ensanche el header */
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra sutil para que se vea pro */
+}
+
+/* --- EL LOGO CUADRADO DE AYER (RÉPLICA EXACTA) --- */
+.p4e-logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 12px;
+}
+
+.p4e-logo-img {
+    height: 50px; /* Un poco más grande para que el contenedor respire */
+    width: auto;
+    
+    /* EL CONTENEDOR VERDE OSCURO (COMO AYER) */
+    background-color: #0d4d33; /* El verde oscuro exacto de tu marca */
+    
+    /* Bordes apenas redondeados para dar esa forma cuadrada */
+    border-radius: 4px; /* Un valor bajo para esquinas sutiles */
+    
+    border: none; /* Quitamos cualquier borde exterior extraño */
+    
+    padding: 4px; /* Espacio interno para que el círculo flote dentro */
+    display: block;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Una sombra muy leve */
+}
+
+/* El círculo rojo dentro del logo ya viene en tu imagen, */
+/* así que el CSS solo tiene que enmarcar la caja. */
+.p4e-brand-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.p4e-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0d4d33; /* Verde de la imagen */
+    letter-spacing: 0.5px;
+    line-height: 1;
+}
+
+.p4e-subtitle {
+    font-size: 10px;
+    color: #888;
+    font-weight: 600;
+}
+
+/* --- MENÚ DE NAVEGACIÓN --- */
+.p4e-nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.p4e-nav-link {
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* --- BOTÓN COTIZAR (EL NARANJA DE LA IMAGEN) --- */
+.p4e-cta-button {
+    background-color: #f7a01b;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 30px; 
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(247, 160, 27, 0.2);
+
+    /* --- ESTO ES LO QUE DEBES AGREGAR PARA CENTRAR --- */
+    display: inline-flex;     /* Permite que el botón se comporte como bloque pero use Flexbox */
+    align-items: center;      /* Centra el texto verticalmente */
+    justify-content: center;   /* Centra el texto horizontalmente */
+    text-align: center;       /* Refuerzo para navegadores antiguos */
+    margin-right: 5px; /* Ajusta este número (10px, 20px) según qué tan lejos lo quieras */
+}
+
+
+/* --- SOLO PARA PC --- */
+@media (min-width: 769px) {
+    .p4e-nav-links {
+        display: flex; /* Aquí se ve normal en la computadora */
+        flex-direction: row;
+        gap: 20px;
+    }
+    .menu-button {
+        display: none; /* Escondemos las 3 rayitas en la PC */
+    }
+   
+}
+/* =========================================
+   3. REGLAS PARA CELULARES (MENÚ HAMBURGUESA)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Mostramos el botón de 3 rayitas */
+    .menu-button {
+        display: block;
+        font-size: 35px;
+        color: #003366;
+        cursor: pointer;
+        order: 2; /* Lo posicionamos correctamente */
+        /* ESTO ES LO QUE BUSCAS: */
+    margin-left: 20px;   /* Empuja el menú 20px a la derecha del botón */
+    padding: 5px;        /* Área de toque más cómoda */
+    }
+
+    /* Escondemos el checkbox real */
+    .menu-checkbox {
+        display: none;
+    }
+
+    /* EL MENÚ DESPLEGABLE (OCULTO POR DEFECTO) */
+    .p4e-nav-links {
+        display: none; /* Se oculta */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Aparece justo debajo del header */
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        gap: 15px;
+    }
+
+    /* LA MAGIA: Si el checkbox está marcado, muestra el menú */
+    .menu-checkbox:checked ~ .p4e-nav-links {
+        display: flex;
+    }
+
+    /* Ajustes de tamaño para que quepa todo en una fila */
+    .p4e-header {
+        padding: 10px;
+    }
+
+    .p4e-title {
+        font-size: 0.9rem;
+    }
+
+    .p4e-logo-img {
+        height: 35px;
+    }
+
+    .p4e-cta-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* =========================================
+   AJUSTE DE POSICIÓN HERO (PC)
+   Mano (Izquierda) - Texto (Centro) - Objetos (Derecha)
+   ========================================= */
+
+@media (min-width: 769px) {
+    .hero {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        /* EL ARREGLO: Altura fija para que el verde no desaparezca */
+        height: 1100px !important; 
+        background-color: #195c43 !important; 
+        
+        padding: 20px 10px;
+        position: relative; 
+        overflow: hidden; /* Evita que la mano cree scroll lateral */
+        width: 100%;
+    }
+    /* 2. LA MANO (Saliendo del borde izquierdo) */
+    .img-mano {
+        position: absolute;
+        left: -270px;        /* Se sale un poco de la pantalla */
+        top: 15%;           /* Altura en la pantalla */
+        width: 900px;       /* Tamaño fijo para que no crezca loca */
+        transform: rotate(15deg);
+        z-index: 1;
+    }
+    .img-mano img { width: 100%; height: auto; }
+
+    /* --- ARREGLANDO EL HERO CENTRAL (TÍTULO Y BOTONES) --- */
+    
+   /* 3. EL TEXTO (Ajustando la altura central) */
+    .hero-content {
+        width: 55%;
+        text-align: center;
+        z-index: 2;         
+        
+        /* EL AJUSTE: Aumenta este número para bajar el texto */
+        margin-top: 60px;   /* Prueba con 60px, 80px o 100px hasta que lo veas perfecto */
+        
+        padding: 0 15px;    /* Espacio a los lados para que no toque los bordes */
+    }
+    /* 1. EL TÍTULO (NUNCA NEGRO, SIEMPRE BLANCO/NARANJA) */
+    .hero-content h1 {
+        font-size: 87px; /* Un poco más grande para que impacte */
+        font-weight: 800; /* Muy negrita, como en la captura */
+        line-height: 1; /* Líneas pegadas para fuerza visual */
+        margin-bottom: 50px;
+        color: #ffffff; /* ¡BLANCO INMACULADO! No negro. */
+        letter-spacing: -0.5px; /* Un toque premium */
+    }
+    /* La palabra "Minutos" en el naranja vibrante */
+    .highlight {
+        color: #f7a01b !important; /* Forzamos el naranja de tu marca */
+        font-weight: 900;
+        text-shadow: 0 0 15px rgba(247, 160, 27, 0.7);
+    animation: neon-glow 1.5s ease-in-out infinite alternate;
+    }
+  
+    /* El párrafo descriptivo (Blanco suave) */
+    .hero-content p {
+        font-size: 25px; /* Miniatura profesional */
+        line-height: 1.4;
+        max-width: 600px; /* No muy ancho */
+        margin: 0 auto 50px auto;
+        color: rgba(255, 255, 255, 0.9) !important; /* Blanco suavizado, no gris */
+    }
+    /* 2. LOS BOTONES (ADIÓS AZUL, HOLA NARANJA Y CRISTAL) */
+    .hero-btns {
+        display: flex;
+        gap: 10px; /* Espacio elegante entre ellos */
+        justify-content: center;
+    }
+    /* Botón Principal (Naranja Vibrante) */
+    .btn-primary {
+        background-color: #f7a01b !important; /* Naranja de la marca */
+        color: #ffffff !important; /* Texto blanco nítido */
+        padding: 8px 18px; /* Tamaño justo para celular */
+        font-size: 23px; /* Letra pequeña pero legible */
+        font-weight: 700;
+        border-radius: 20px; /* Forma de cápsula premium */
+        text-decoration: none;
+        box-shadow: 0 4px 10px rgba(247, 160, 27, 0.3); /* Resplandor naranja */
+        transition: 0.2s;
+        border: none;
+    }
+
+    /* Botón Secundario (Estilo Cristal/Outline) */
+    .btn-secondary {
+        background-color: transparent !important; /* Fondo transparente */
+        color: #ffffff !important; /* Texto blanco */
+        padding: 8px 18px;
+        font-size: 23px;
+        font-weight: 600;
+        border-radius: 20px;
+        text-decoration: none;
+        /* Borde blanco fino como en la captura profesional */
+        border: 1px solid rgba(255, 255, 255, 0.5) !important; 
+        transition: 0.2s;
+    }
+
+
+    
+
+    /* 4. LOS OBJETOS (LAPTOP/CELULARES) - POSICIÓN FIJA EN CELULAR */
+    .img-objetos {
+        position: absolute;  /* Flota sobre el verde */
+        
+        /* --- AJUSTE HORIZONTAL --- */
+        right: -250px;        /* LA CLAVE: Un número negativo para que "salga" de la pantalla por la derecha */
+        
+        /* --- AJUSTE VERTICAL --- */
+        bottom: 24%;         /* Súbelo o bájalo cambiando este % (ej: 20%, 30%) */
+        
+        /* --- TAMAÑO FIJO --- */
+        width: 950px;        /* Controla qué tan grande se ve la laptop en el móvil */
+        
+        z-index: 1;          /* Queda detrás del texto si se llegan a tocar */
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .img-objetos img {
+        width: 100%;
+        height: auto;
+        filter: drop-shadow(-5px 10px 15px rgba(0,0,0,0.3)); /* Sombra hacia la izquierda */
+    }
+
+} 
+/* 1. EL CONTENEDOR DE LAS TARJETAS (Caja de Vidrio) */
+   
+    /* 4. LA CUADRÍCULA DE BENEFICIOS (LAS TARJETAS INDIVIDUALES - ABAJO DEL TODO) */
+    .features-grid {
+        display: flex;
+        flex-direction: row; /* Mantener las tarjetas en fila como escritorio */
+        justify-content: space-around;
+        align-items: stretch; /* Mismo alto para todas las tarjetas */
+        
+        order: 3; /* Tercero las tarjetas */
+        
+        background-color: transparent; /* QUITAMOS EL FONDO BLANCO DEL CONTENEDOR */
+        padding: 15px 5px;
+        width: 80%;
+        border-radius: 8px; /* Pequeño redondeado */
+        box-shadow: none; /* QUITAMOS LA SOMBRA DEL CONTENEDOR */
+        z-index: 5;
+    }
+
+    /* CADA TARJETA INDIVIDUAL (LIMPIA Y CRISTALINA) */
+    .feature-card {
+        flex: 1;
+        text-align: center;
+        padding: 100px;
+        min-width: 0;
+        border: none;                /* Quitamos bordes internos */
+        margin: 0 5px; /* ESPACIO ENTRE LAS TARJETAS */
+        
+        /* EL EFECTO CRISTAL (DE AYER) */
+        background: rgba(255, 255, 255, 0.08); /* Fondo blanco casi transparente */
+        backdrop-filter: blur(10px);         /* Desenfoca el verde detrás */
+        -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+        
+        /* El borde fino y nítido */
+        border: 1px solid rgba(255, 255, 255, 0.15); 
+        border-radius: 15px;         /* Esquinas más redondeadas y suaves */
+        
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
+        z-index: 5;
+    }
+    
+    .feature-card h3 {
+        font-size: 25px; /* Título fijo mini */
+        margin-top: 5px;
+        color: #ffffff; /* Texto blanco sobre el vidrio */
+        line-height: 1.1;
+        white-space: nowrap; /* Que no se parta el título */
+    }
+    
+    .feature-card p {
+        font-size: 15px; /* Texto miniatura */
+        line-height: 1.1;
+        color: rgba(255, 255, 255, 0.8); /* Blanco suavizado */
+    }
+
+    /* Los Iconos */
+    .feature-icon {
+        font-size: 40px; /* Iconos más grandes para el estilo premium */
+        margin-bottom: 8px;
+        display: inline-block;
+        color: #f7a01b;              /* Tu naranja vibrante */
+        filter: drop-shadow(0 2px 4px rgba(247, 160, 27, 0.3)); /* Resplandor suave */
+    }
+
+    @media (min-width: 769px) {
+    /* FORZAMOS EL TAMAÑO DE LA SECCIÓN */
+    .how-it-works {
+        display: block !important;
+        width: 100% !important;
+        
+        /* Aumenta este número (250px) si quieres que sea ETERNA hacia abajo */
+        padding-top: 150px !important; 
+        padding-bottom: 150px !important;
+        
+        background-color: #ffffff !important;
+        min-height: 500px !important; /* Esto le da una altura mínima garantizada */
+    }
+
+    /* FORZAMOS EL ANCHO DEL CONTENEDOR */
+    .container-section {
+        max-width: 1800px !important; /* Más ancho para que respire */
+        margin: 0 auto !important;
+        padding: 0 50px !important;
+    }
+
+   /* 1. EL CONTENEDOR GRID DE PASOS */
+    .steps-grid {
+        display: flex !important;
+        justify-content: space-around !important; /* Reparte el espacio equitativamente */
+        align-items: flex-start !important;
+        max-width: 2000px !important; /* Más ancho para que los iconos no choquen */
+        margin: 0 auto !important; /* Centra el bloque entero */
+        padding: 0 50px !important;
+    }
+    /* 2. CADA PASO INDIVIDUAL */
+    .step-item {
+        flex: 1 !important; /* Todos miden lo mismo */
+        max-width: 350px !important; /* Evita que el texto se estire feo */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0 15px !important;
+    }
+    /* 3. EL CONTENEDOR DEL ICONO (Agrandar la caja) */
+    .step-visual-premium {
+        width: 400px !important;  /* De 60px subimos a 180px */
+        height: 200px !important; /* Caja cuadrada */
+        margin-bottom: 40px !important; /* Espacio con el texto */
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    /* 4. LA IMAGEN DEL ICONO DENTRO */
+    .step-img {
+        width: 100% !important; /* Ocupa el 100% de la caja de 180px */
+        height: 100% !important;
+        object-fit: contain !important; /* Para que la imagen no se corte */
+    }
+
+    /* 5. EL CONECTOR (LA FLECHA) */
+    .step-connector {
+        padding-top: 80px !important; /* Bajamos la flecha para que se alinee con el icono */
+        font-size: 35px !important;   /* Flecha más grande y visible */
+        color: #f7a01b !important;    /* Naranja de tu marca */
+    }
+
+    /* 6. AGRANDAR TEXTOS PARA PC */
+    .step-item h3 {
+        font-size: 35px !important; /* Títulos de los pasos más legibles */
+        margin-bottom: 15px !important;
+        color: #195c43 !important; /* Tu verde oficial */
+    }
+
+    .step-item p {
+        font-size: 18px !important; /* Párrafos más cómodos de leer */
+        line-height: 1.6 !important;
+        color: #555 !important;
+    }
+    /* 7. AGRANDAR EL TÍTULO PRINCIPAL DE LA SECCIÓN */
+    .section-title {
+        font-size: 50px !important; /* Tamaño gigante para que impacte en laptop */
+        margin-bottom: 80px !important; /* Espacio para que no choque con los iconos */
+        text-align: center !important;
+        width: 100% !important;
+        font-weight: 900 !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Opcional: Si el "PROCESO RÁPIDO Y SEGURO" se ve muy pequeño */
+    .pre-title {
+        font-size: 25px !important;
+        margin-bottom: 15px !important;
+        letter-spacing: 2px !important;
+    }
+}
+@media (min-width: 769px) {
+    /* 1. SECCIÓN PRINCIPAL: Centramos todo el contenido verticalmente */
+    .p4e-video-section {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 60px 0 !important;
+    }
+
+    /* 2. EL TÍTULO: Un poco más de aire */
+    .p4e-video-section h2 {
+       background-color: #195c43 !important; /* Tu verde oficial */
+        color: #ffffff !important;           /* Letras blancas */
+        
+        display: block !important;           /* Ocupa todo el ancho disponible */
+        width: 100% !important;
+        margin: 0 !important;                /* Quitamos márgenes laterales */
+        padding: 40px 0 !important;          /* Espacio arriba y abajo de las letras */
+        
+        font-size: 45px !important;          /* Tamaño grande para PC */
+        text-align: center !important;
+        text-transform: uppercase !important;
+        font-weight: 800 !important;
+        
+        /* Opcional: Sombra interna para dar profundidad */
+        box-shadow: inset 0 10px 20px rgba(0,0,0,0.2);
+    }
+    /* Ajuste para que el video no quede pegado a la franja verde */
+    .reproductor-p4e {
+        margin-top: 60px !important; 
+    }
+
+    /* 3. EL REPRODUCTOR: Aquí reducimos el tamaño */
+    .reproductor-p4e {
+        /* AJUSTA ESTE ANCHO: 700px es un tamaño ideal para laptop */
+        width: 100% !important;
+        max-width: 1900px !important; 
+        margin: 0 auto 30px auto !important; /* Lo centra y separa del texto de abajo */
+    }
+
+    #miVideo {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9 !important; /* Mantiene el formato cine */
+        border-radius: 0px !important; /* Bordes más suaves para PC */
+        box-shadow: 0 10px 40px rgba(0,0,0,0.15) !important; /* Le da profundidad */
+    }
+
+    /* 4. EL TEXTO DE ABAJO: Para que no se estire a todo lo ancho de la pantalla */
+   /* 1. EL CONTENEDOR PRINCIPAL: Quitamos el límite estrecho */
+    .p4e-tasacion-justa {
+        width: 95% !important; /* Ocupa casi todo el ancho de la ventana */
+        max-width: 100% !important; /* Eliminamos cualquier restricción de ancho */
+        margin: 0 auto !important;
+        padding: 60px 5% !important; /* 5% de margen a los lados para que no toque los bordes físicos */
+    }
+
+    /* 2. EL DIV INTERNO (MUY IMPORTANTE) */
+    /* En tu HTML tienes un div con style="max-width: 800px", esto lo rompe: */
+    .p4e-tasacion-justa div {
+        max-width: 90% !important; /* Obligamos al div de adentro a estirarse también */
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    /* 3. EL PÁRRAFO: Ahora las líneas serán mucho más largas */
+    .p4e-tasacion-justa p {
+        font-size: 22px !important; /* Un poco más pequeño para que quepa más texto por línea */
+        line-height: 1.5 !important;
+        text-align: justify !important; /* O 'center' si prefieres, pero 'justify' llena más el ancho */
+        width: 100% !important;
+    }
+
+    .p4e-tasacion-justa h3 {
+        font-size: 50px !important; /* Título más grande para acompañar el ancho */
+        width: 100% !important;
+    }
+}
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    /* 1. EL CONTENEDOR PADRE (TODO EL VERDE) */
+    /* 1. EL CONTENEDOR PADRE */
+   
+    .hero {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        /* EL ARREGLO: Altura fija para que el verde no desaparezca */
+        height: 550px !important; 
+        background-color: #195c43 !important; 
+        
+        padding: 20px 10px;
+        position: relative; 
+        overflow: hidden; /* Evita que la mano cree scroll lateral */
+        width: 100%;
+    }
+
+    /* 2. LA MANO (Saliendo del borde izquierdo) */
+    .img-mano {
+        position: absolute;
+        left: -40px;        /* Se sale un poco de la pantalla */
+        top: 33%;           /* Altura en la pantalla */
+        width: 150px;       /* Tamaño fijo para que no crezca loca */
+        transform: rotate(15deg);
+        z-index: 1;
+    }
+    .img-mano img { width: 100%; height: auto; }
+
+    /* --- ARREGLANDO EL HERO CENTRAL (TÍTULO Y BOTONES) --- */
+    
+   /* 3. EL TEXTO (Ajustando la altura central) */
+    .hero-content {
+        width: 100%;
+        text-align: center;
+        z-index: 2;         
+        
+        /* EL AJUSTE: Aumenta este número para bajar el texto */
+        margin-top: 110px;   /* Prueba con 60px, 80px o 100px hasta que lo veas perfecto */
+        
+        padding: 0 65px;    /* Espacio a los lados para que no toque los bordes */
+    }
+    /* 1. EL TÍTULO (NUNCA NEGRO, SIEMPRE BLANCO/NARANJA) */
+    .hero-content h1 {
+        font-size: 24px; /* Un poco más grande para que impacte */
+        font-weight: 800; /* Muy negrita, como en la captura */
+        line-height: 1; /* Líneas pegadas para fuerza visual */
+        margin-bottom: 12px;
+        color: #ffffff; /* ¡BLANCO INMACULADO! No negro. */
+        letter-spacing: -0.5px; /* Un toque premium */
+    }
+    /* La palabra "Minutos" en el naranja vibrante */
+    .highlight {
+        color: #f7a01b !important; /* Forzamos el naranja de tu marca */
+        font-weight: 900;
+        text-shadow: 0 0 15px rgba(247, 160, 27, 0.7);
+    animation: neon-glow 1.5s ease-in-out infinite alternate;
+    }
+    
+    /* El párrafo descriptivo (Blanco suave) */
+    .hero-content p {
+        font-size: 10px; /* Miniatura profesional */
+        line-height: 1.4;
+        max-width: 280px; /* No muy ancho */
+        margin: 0 auto 20px auto;
+        color: rgba(255, 255, 255, 0.9) !important; /* Blanco suavizado, no gris */
+    }
+    /* 2. LOS BOTONES (ADIÓS AZUL, HOLA NARANJA Y CRISTAL) */
+    .hero-btns {
+        display: flex;
+        gap: 10px; /* Espacio elegante entre ellos */
+        justify-content: center;
+    }
+    /* Botón Principal (Naranja Vibrante) */
+    .btn-primary {
+        background-color: #f7a01b !important; /* Naranja de la marca */
+        color: #ffffff !important; /* Texto blanco nítido */
+        padding: 8px 18px; /* Tamaño justo para celular */
+        font-size: 10px; /* Letra pequeña pero legible */
+        font-weight: 700;
+        border-radius: 20px; /* Forma de cápsula premium */
+        text-decoration: none;
+        box-shadow: 0 4px 10px rgba(247, 160, 27, 0.3); /* Resplandor naranja */
+        transition: 0.2s;
+        border: none;
+    }
+
+    /* Botón Secundario (Estilo Cristal/Outline) */
+    .btn-secondary {
+        background-color: transparent !important; /* Fondo transparente */
+        color: #ffffff !important; /* Texto blanco */
+        padding: 8px 18px;
+        font-size: 10px;
+        font-weight: 600;
+        border-radius: 20px;
+        text-decoration: none;
+        /* Borde blanco fino como en la captura profesional */
+        border: 1px solid rgba(255, 255, 255, 0.5) !important; 
+        transition: 0.2s;
+    }
+
+
+    
+
+    /* 4. LOS OBJETOS (LAPTOP/CELULARES) - POSICIÓN FIJA EN CELULAR */
+    .img-objetos {
+        position: absolute;  /* Flota sobre el verde */
+        
+        /* --- AJUSTE HORIZONTAL --- */
+        right: -45px;        /* LA CLAVE: Un número negativo para que "salga" de la pantalla por la derecha */
+        
+        /* --- AJUSTE VERTICAL --- */
+        bottom: 45%;         /* Súbelo o bájalo cambiando este % (ej: 20%, 30%) */
+        
+        /* --- TAMAÑO FIJO --- */
+        width: 170px;        /* Controla qué tan grande se ve la laptop en el móvil */
+        
+        z-index: 1;          /* Queda detrás del texto si se llegan a tocar */
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .img-objetos img {
+        width: 100%;
+        height: auto;
+        filter: drop-shadow(-5px 10px 15px rgba(0,0,0,0.3)); /* Sombra hacia la izquierda */
+    }
+    
+    
+    
+    
+    
+    /* 3. EL PISO DE ABAJO (LAS TARJETAS - DENTRO DE LA MISMA SECCIÓN) */
+    
+    /* 1. EL CONTENEDOR DE LAS TARJETAS (Caja de Vidrio) */
+   
+    /* 4. LA CUADRÍCULA DE BENEFICIOS (LAS TARJETAS INDIVIDUALES - ABAJO DEL TODO) */
+    .features-grid {
+        display: flex;
+        flex-direction: row; /* Mantener las tarjetas en fila como escritorio */
+        justify-content: space-around;
+        align-items: stretch; /* Mismo alto para todas las tarjetas */
+        
+        order: 3; /* Tercero las tarjetas */
+        
+        background-color: transparent; /* QUITAMOS EL FONDO BLANCO DEL CONTENEDOR */
+        padding: 15px 5px;
+        width: 100%;
+        border-radius: 8px; /* Pequeño redondeado */
+        box-shadow: none; /* QUITAMOS LA SOMBRA DEL CONTENEDOR */
+        z-index: 5;
+    }
+
+    /* CADA TARJETA INDIVIDUAL (LIMPIA Y CRISTALINA) */
+    .feature-card {
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        min-width: 0;
+        border: none;                /* Quitamos bordes internos */
+        margin: 0 5px; /* ESPACIO ENTRE LAS TARJETAS */
+        
+        /* EL EFECTO CRISTAL (DE AYER) */
+        background: rgba(255, 255, 255, 0.08); /* Fondo blanco casi transparente */
+        backdrop-filter: blur(10px);         /* Desenfoca el verde detrás */
+        -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+        
+        /* El borde fino y nítido */
+        border: 1px solid rgba(255, 255, 255, 0.15); 
+        border-radius: 15px;         /* Esquinas más redondeadas y suaves */
+        
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
+        z-index: 5;
+    }
+    
+    .feature-card h3 {
+        font-size: 10px; /* Título fijo mini */
+        margin-top: 5px;
+        color: #ffffff; /* Texto blanco sobre el vidrio */
+        line-height: 1.1;
+        white-space: nowrap; /* Que no se parta el título */
+    }
+    
+    .feature-card p {
+        font-size: 8px; /* Texto miniatura */
+        line-height: 1.1;
+        color: rgba(255, 255, 255, 0.8); /* Blanco suavizado */
+    }
+
+    /* Los Iconos */
+    .feature-icon {
+        font-size: 22px; /* Iconos más grandes para el estilo premium */
+        margin-bottom: 8px;
+        display: inline-block;
+        color: #f7a01b;              /* Tu naranja vibrante */
+        filter: drop-shadow(0 2px 4px rgba(247, 160, 27, 0.3)); /* Resplandor suave */
+    }
+}
+
+/* Contenedor principal de la sección */
+.how-it-works {
+    padding: 40px 10px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.container-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Títulos */
+.pre-title {
+    display: block;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.section-title {
+    font-size: 25px;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+.highlight-orange {
+    color: #ff8c00; /* Ajusta al naranja de tu logo */
+}
+
+/* Grid de Pasos - FUERZA UNA SOLA FILA */
+.steps-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5px; /* Espacio mínimo entre columnas */
+}
+
+/* Cada Item del paso */
+.step-item {
+    flex: 1; /* Hace que los 3 midan lo mismo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5px;
+}
+
+/* Ajuste de Imágenes/Iconos */
+.step-visual-premium {
+    width: 125px;  /* Tamaño reducido para que quepan */
+    height: 60px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Textos dentro de los pasos */
+.step-item h3 {
+    font-size: 14px; /* Texto pequeño para evitar saltos de línea feos */
+    font-weight: bold;
+    margin-bottom: 6px;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.step-item p {
+    font-size: 11px; /* Letra pequeña para el cuerpo */
+    line-height: 1.3;
+    color: #444;
+    margin: 0;
+}
+
+/* El conector (la flechita) */
+.step-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25px; /* Alinea la flecha con el centro de la imagen */
+    color: #ccc;
+    font-size: 12px;
+}
+
+/* Ajuste para pantallas extremadamente pequeñas */
+@media (max-width: 360px) {
+    .step-item h3 { font-size: 12px; }
+    .step-item p { font-size: 10px; }
+    .step-visual-premium { width: 50px; height: 50px; }
+}
+
+.video-player-box {
+    max-width: 800px;
+    margin: 30px auto;
+    border: 4px solid #f7a01b; /* Tu color corporativo */
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #000;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+#miVideo {
+    width: 100%;
+    display: block;
+}
+
+.video-info {
+    background-color: #444;
+    padding: 15px;
+    text-align: center;
+}
+
+#tituloActual {
+    color: #fff;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+/* =========================================
+   NUEVA SECCIÓN: OCTÁGONOS SIMÉTRICOS (6 PIEZAS - MOBILE FIRST)
+   ========================================= */
+.p4e-puzzle-section {
+    padding: 70px 20px;
+   background-color: #195c43; /* Tu verde exacto */
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.p4e-section-title {
+    font-size: 2.2rem;
+    color: #ffffff; /* Texto blanco puro para que resalte */
+    margin-bottom: 50px;
+    font-weight: 900;
+}
+
+.p4e-puzzle-grid {
+    display: grid;
+    /* 2 columnas de 3 filas */
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(3, 1fr);
+    /* Un pequeño gap para que se note la forma */
+    gap: 15px; 
+    max-width: 380px; /* Ajuste para celular */
+    margin: 0 auto;
+    /* Efecto de mosaico octogonal */
+    filter: drop-shadow(0 4px 10px rgba(247, 160, 27, 0.2));
+}
+
+/* ESTILO BASE DE CADA OCTÁGONO */
+.p4e-puzzle-piece {
+    background-color: #f7a01b; /* Naranja de la marca */
+    aspect-ratio: 1 / 1; /* Formas cuadradas base */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    
+    /* LA MÁGIA DE LA FORMA (CLIP-PATH OCTÁGONO) */
+    /* Crea un octágono perfecto y simétrico */
+    clip-path: polygon(
+        30% 0%, 70% 0%, 100% 30%, 100% 70%, 
+        70% 100%, 30% 100%, 0% 70%, 0% 30%
+    );
+}
+
+/* Efecto Hover */
+.p4e-puzzle-piece:hover {
+    background-color: #e89518;
+    transform: scale(1.05); /* Efecto de "flotar" ligeramente */
+    z-index: 10;
+}
+
+/* CONTENIDO INTERNO DE LA PIEZA */
+.p4e-piece-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    padding: 10px;
+}
+
+.p4e-puzzle-icon {
+    font-size: 2.5rem; /* Icono grande */
+}
+
+.p4e-puzzle-label {
+    font-size: 1.1rem; /* Texto legible */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+/* AQUÍ ES DONDE METES TUS IMÁGENES DESPUÉS */
+/* Solo tendrás que cambiar el background-color por background-image */
+/* --- IMÁGENES PARA LOS OCTÁGONOS --- */
+
+.p4e-piece-tv { 
+    background-image: url('imagenes/televisores.png'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.p4e-piece-laptop { 
+    background-image: url('imagenes/portatiles.png'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.p4e-piece-linea-blanca { 
+    background-image: url('imagenes/heladeras.png'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.p4e-piece-celulares { 
+    background-image: url('imagenes/celulares.png'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.p4e-piece-garrafas { 
+    background-image: url('imagenes/garrafas.png'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.p4e-piece-joyas { 
+    background-image: url('imagenes/joyas.png'); 
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ajuste para que el texto e iconos se vean bien sobre las fotos */
+.p4e-puzzle-piece::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Capa oscura para que resalte el texto blanco */
+    z-index: 1;
+}
+
+.p4e-piece-content {
+    z-index: 2; /* Pone el icono y texto por encima de la foto y la capa oscura */
+}
+/* =========================================
+   RESPONSIVE (PARA ESCRITORIO - 3x2)
+   ========================================= */
+@media (min-width: 768px) {
+    .p4e-puzzle-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 por fila en PC */
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 800px;
+    }
+    
+    .p4e-puzzle-icon { font-size: 3rem; }
+    .p4e-puzzle-label { font-size: 1.3rem; }
+}
+
+
+.p4e-btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 30px;
+    
+    /* ESTO QUITA EL AZUL Y EL SUBRAYADO */
+    color: #ffffff !important;      /* Fuerza el color blanco */
+    text-decoration: none !important; /* Quita la línea de abajo */
+    
+    background-color: #25D366;    /* Verde oficial de WhatsApp */
+    border-radius: 50px;          /* Botón redondeado */
+    font-weight: 800;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+/* También evita que cambie de color cuando ya le diste clic */
+.p4e-btn-whatsapp:visited, 
+.p4e-btn-whatsapp:active, 
+.p4e-btn-whatsapp:hover {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+/* Este contenedor es el que empuja el botón al medio */
+.p4e-cta-container {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    width: 100%;
+    margin-top: 30px; /* Le da espacio respecto al rompecabezas */
+}
+
+/* Ajuste extra para el botón */
+.p4e-btn-whatsapp {
+    margin: 0 auto; /* Refuerza el centrado */
+}
