@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 html, body {
     max-width: 100%;
@@ -1578,4 +1579,628 @@ img {
     font-size: 30px;
     font-weight: bold;
     color: #aaa;
+=======
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* ESTO MATA EL SCROLL HORIZONTAL */
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box; /* Asegura que el padding no estire las cajas */
+}
+
+
+img {
+    max-width: 100%; /* Ninguna imagen puede ser más ancha que su caja */
+    height: auto;
+    display: block;
+}
+
+/* Específicamente para tus imágenes del Hero */
+.img-mano, .img-objetos {
+    width: 45%; /* O el porcentaje que quieras para que compartan fila */
+    max-width: 300px; /* Tamaño máximo para que no se vean gigantes */
+    height: auto;
+}
+.hero, .steps-grid, .features-grid {
+    display: flex;
+    flex-wrap: nowrap; /* Mantiene la fila */
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden; /* Corta cualquier excedente */
+    align-items: center;
+    justify-content: space-around; /* Reparte el espacio equitativamente */
+}
+
+/* Ajusta el contenido de adentro para que se encoja */
+.hero-content, .feature-card, .step-item {
+    flex: 1 1 auto; /* Permite que se encojan para caber */
+    min-width: 0;   /* Clave para que Flexbox pueda comprimir el texto */
+    padding: 10px;
+}
+
+
+
+/* =========================================
+   1. RESET Y REGLAS UNIVERSALES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* EVITA EL SCROLL HORIZONTAL DE RAÍZ */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================================
+   2. ENCABEZADO (ESTILO ESCRITORIO)
+   ========================================= */
+/* --- HEADER LIMPIO --- */
+.p4e-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* --- EL LOGO CUADRADO DE AYER (RÉPLICA EXACTA) --- */
+.p4e-logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 12px;
+}
+
+.p4e-logo-img {
+    height: 50px; /* Un poco más grande para que el contenedor respire */
+    width: auto;
+    
+    /* EL CONTENEDOR VERDE OSCURO (COMO AYER) */
+    background-color: #0d4d33; /* El verde oscuro exacto de tu marca */
+    
+    /* Bordes apenas redondeados para dar esa forma cuadrada */
+    border-radius: 4px; /* Un valor bajo para esquinas sutiles */
+    
+    border: none; /* Quitamos cualquier borde exterior extraño */
+    
+    padding: 4px; /* Espacio interno para que el círculo flote dentro */
+    display: block;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Una sombra muy leve */
+}
+
+/* El círculo rojo dentro del logo ya viene en tu imagen, */
+/* así que el CSS solo tiene que enmarcar la caja. */
+.p4e-brand-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.p4e-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0d4d33; /* Verde de la imagen */
+    letter-spacing: 0.5px;
+    line-height: 1;
+}
+
+.p4e-subtitle {
+    font-size: 10px;
+    color: #888;
+    font-weight: 600;
+}
+
+/* --- MENÚ DE NAVEGACIÓN --- */
+.p4e-nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.p4e-nav-link {
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* --- BOTÓN COTIZAR (EL NARANJA DE LA IMAGEN) --- */
+.p4e-cta-button {
+    background-color: #f7a01b;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 30px; 
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(247, 160, 27, 0.2);
+
+    /* --- ESTO ES LO QUE DEBES AGREGAR PARA CENTRAR --- */
+    display: inline-flex;     /* Permite que el botón se comporte como bloque pero use Flexbox */
+    align-items: center;      /* Centra el texto verticalmente */
+    justify-content: center;   /* Centra el texto horizontalmente */
+    text-align: center;       /* Refuerzo para navegadores antiguos */
+    margin-right: 5px; /* Ajusta este número (10px, 20px) según qué tan lejos lo quieras */
+}
+
+
+/* --- SOLO PARA PC --- */
+@media (min-width: 769px) {
+    .p4e-nav-links {
+        display: flex; /* Aquí se ve normal en la computadora */
+        flex-direction: row;
+        gap: 20px;
+    }
+    .menu-button {
+        display: none; /* Escondemos las 3 rayitas en la PC */
+    }
+   
+}
+/* =========================================
+   3. REGLAS PARA CELULARES (MENÚ HAMBURGUESA)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Mostramos el botón de 3 rayitas */
+    .menu-button {
+        display: block;
+        font-size: 35px;
+        color: #003366;
+        cursor: pointer;
+        order: 2; /* Lo posicionamos correctamente */
+        /* ESTO ES LO QUE BUSCAS: */
+    margin-left: 20px;   /* Empuja el menú 20px a la derecha del botón */
+    padding: 5px;        /* Área de toque más cómoda */
+    }
+
+    /* Escondemos el checkbox real */
+    .menu-checkbox {
+        display: none;
+    }
+
+    /* EL MENÚ DESPLEGABLE (OCULTO POR DEFECTO) */
+    .p4e-nav-links {
+        display: none; /* Se oculta */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Aparece justo debajo del header */
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        gap: 15px;
+    }
+
+    /* LA MAGIA: Si el checkbox está marcado, muestra el menú */
+    .menu-checkbox:checked ~ .p4e-nav-links {
+        display: flex;
+    }
+
+    /* Ajustes de tamaño para que quepa todo en una fila */
+    .p4e-header {
+        padding: 10px;
+    }
+
+    .p4e-title {
+        font-size: 0.9rem;
+    }
+
+    .p4e-logo-img {
+        height: 35px;
+    }
+
+    .p4e-cta-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* =========================================
+   4. SECCIÓN HERO (ESTILO PC)
+   ========================================= */
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 5%;
+    flex-wrap: nowrap; /* Mantiene la horizontalidad que pediste */
+}
+
+.hero-content {
+    max-width: 500px;
+    text-align: center;
+}
+
+.highlight {
+    color: #ff6600;
+}
+
+.img-mano, .img-objetos {
+    width: 20%;
+    max-width: 250px;
+}
+
+
+/* SECCION DEL HERO PANTALLAS GRANDES  */
+
+@media (min-width: 769px) {
+    .hero {
+        background-color: #195c43;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 600px; /* Altura fija para escritorio */
+        padding: 0 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 65px; /* Tamaño fijo gigante */
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    .hero-content p {
+        font-size: 20px; /* Tamaño fijo legible */
+        max-width: 600px;
+        margin: 0 auto 30px;
+    }
+
+    .img-mano img {
+        width: 400px; /* Tamaño fijo de la imagen izquierda */
+    }
+
+    .img-objetos img {
+        width: 450px; /* Tamaño fijo de la imagen derecha */
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 15px 35px;
+        font-size: 18px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    /* 1. EL CONTENEDOR PADRE (TODO EL VERDE) */
+    /* 1. EL CONTENEDOR PADRE */
+   
+    .hero {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        /* EL ARREGLO: Altura fija para que el verde no desaparezca */
+        height: 450px !important; 
+        background-color: #195c43 !important; 
+        
+        padding: 20px 10px;
+        position: relative; 
+        overflow: hidden; /* Evita que la mano cree scroll lateral */
+        width: 100%;
+    }
+
+    /* 2. LA MANO (Saliendo del borde izquierdo) */
+    .img-mano {
+        position: absolute;
+        left: -40px;        /* Se sale un poco de la pantalla */
+        top: 23%;           /* Altura en la pantalla */
+        width: 150px;       /* Tamaño fijo para que no crezca loca */
+        transform: rotate(15deg);
+        z-index: 1;
+    }
+    .img-mano img { width: 100%; height: auto; }
+
+    /* --- ARREGLANDO EL HERO CENTRAL (TÍTULO Y BOTONES) --- */
+    
+   /* 3. EL TEXTO (Ajustando la altura central) */
+    .hero-content {
+        width: 100%;
+        text-align: center;
+        z-index: 2;         
+        
+        /* EL AJUSTE: Aumenta este número para bajar el texto */
+        margin-top: 50px;   /* Prueba con 60px, 80px o 100px hasta que lo veas perfecto */
+        
+        padding: 0 15px;    /* Espacio a los lados para que no toque los bordes */
+    }
+    /* 1. EL TÍTULO (NUNCA NEGRO, SIEMPRE BLANCO/NARANJA) */
+    .hero-content h1 {
+        font-size: 24px; /* Un poco más grande para que impacte */
+        font-weight: 800; /* Muy negrita, como en la captura */
+        line-height: 1; /* Líneas pegadas para fuerza visual */
+        margin-bottom: 12px;
+        color: #ffffff; /* ¡BLANCO INMACULADO! No negro. */
+        letter-spacing: -0.5px; /* Un toque premium */
+    }
+    /* La palabra "Minutos" en el naranja vibrante */
+    .highlight {
+        color: #f7a01b !important; /* Forzamos el naranja de tu marca */
+        font-weight: 900;
+    }
+    /* El párrafo descriptivo (Blanco suave) */
+    .hero-content p {
+        font-size: 10px; /* Miniatura profesional */
+        line-height: 1.4;
+        max-width: 280px; /* No muy ancho */
+        margin: 0 auto 20px auto;
+        color: rgba(255, 255, 255, 0.9) !important; /* Blanco suavizado, no gris */
+    }
+    /* 2. LOS BOTONES (ADIÓS AZUL, HOLA NARANJA Y CRISTAL) */
+    .hero-btns {
+        display: flex;
+        gap: 10px; /* Espacio elegante entre ellos */
+        justify-content: center;
+    }
+    /* Botón Principal (Naranja Vibrante) */
+    .btn-primary {
+        background-color: #f7a01b !important; /* Naranja de la marca */
+        color: #ffffff !important; /* Texto blanco nítido */
+        padding: 8px 18px; /* Tamaño justo para celular */
+        font-size: 10px; /* Letra pequeña pero legible */
+        font-weight: 700;
+        border-radius: 20px; /* Forma de cápsula premium */
+        text-decoration: none;
+        box-shadow: 0 4px 10px rgba(247, 160, 27, 0.3); /* Resplandor naranja */
+        transition: 0.2s;
+        border: none;
+    }
+
+    /* Botón Secundario (Estilo Cristal/Outline) */
+    .btn-secondary {
+        background-color: transparent !important; /* Fondo transparente */
+        color: #ffffff !important; /* Texto blanco */
+        padding: 8px 18px;
+        font-size: 10px;
+        font-weight: 600;
+        border-radius: 20px;
+        text-decoration: none;
+        /* Borde blanco fino como en la captura profesional */
+        border: 1px solid rgba(255, 255, 255, 0.5) !important; 
+        transition: 0.2s;
+    }
+
+
+    
+
+    /* 4. LOS OBJETOS (LAPTOP/CELULARES) - POSICIÓN FIJA EN CELULAR */
+    .img-objetos {
+        position: absolute;  /* Flota sobre el verde */
+        
+        /* --- AJUSTE HORIZONTAL --- */
+        right: -45px;        /* LA CLAVE: Un número negativo para que "salga" de la pantalla por la derecha */
+        
+        /* --- AJUSTE VERTICAL --- */
+        bottom: 50%;         /* Súbelo o bájalo cambiando este % (ej: 20%, 30%) */
+        
+        /* --- TAMAÑO FIJO --- */
+        width: 170px;        /* Controla qué tan grande se ve la laptop en el móvil */
+        
+        z-index: 1;          /* Queda detrás del texto si se llegan a tocar */
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .img-objetos img {
+        width: 100%;
+        height: auto;
+        filter: drop-shadow(-5px 10px 15px rgba(0,0,0,0.3)); /* Sombra hacia la izquierda */
+    }
+    
+    
+    
+    
+    
+    /* 3. EL PISO DE ABAJO (LAS TARJETAS - DENTRO DE LA MISMA SECCIÓN) */
+    
+    /* 1. EL CONTENEDOR DE LAS TARJETAS (Caja de Vidrio) */
+   
+    /* 4. LA CUADRÍCULA DE BENEFICIOS (LAS TARJETAS INDIVIDUALES - ABAJO DEL TODO) */
+    .features-grid {
+        display: flex;
+        flex-direction: row; /* Mantener las tarjetas en fila como escritorio */
+        justify-content: space-around;
+        align-items: stretch; /* Mismo alto para todas las tarjetas */
+        
+        order: 3; /* Tercero las tarjetas */
+        
+        background-color: transparent; /* QUITAMOS EL FONDO BLANCO DEL CONTENEDOR */
+        padding: 15px 5px;
+        width: 100%;
+        border-radius: 8px; /* Pequeño redondeado */
+        box-shadow: none; /* QUITAMOS LA SOMBRA DEL CONTENEDOR */
+        z-index: 5;
+    }
+
+    /* CADA TARJETA INDIVIDUAL (LIMPIA Y CRISTALINA) */
+    .feature-card {
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        min-width: 0;
+        border: none;                /* Quitamos bordes internos */
+        margin: 0 5px; /* ESPACIO ENTRE LAS TARJETAS */
+        
+        /* EL EFECTO CRISTAL (DE AYER) */
+        background: rgba(255, 255, 255, 0.08); /* Fondo blanco casi transparente */
+        backdrop-filter: blur(10px);         /* Desenfoca el verde detrás */
+        -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+        
+        /* El borde fino y nítido */
+        border: 1px solid rgba(255, 255, 255, 0.15); 
+        border-radius: 15px;         /* Esquinas más redondeadas y suaves */
+        
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
+        z-index: 5;
+    }
+    
+    .feature-card h3 {
+        font-size: 10px; /* Título fijo mini */
+        margin-top: 5px;
+        color: #ffffff; /* Texto blanco sobre el vidrio */
+        line-height: 1.1;
+        white-space: nowrap; /* Que no se parta el título */
+    }
+    
+    .feature-card p {
+        font-size: 8px; /* Texto miniatura */
+        line-height: 1.1;
+        color: rgba(255, 255, 255, 0.8); /* Blanco suavizado */
+    }
+
+    /* Los Iconos */
+    .feature-icon {
+        font-size: 22px; /* Iconos más grandes para el estilo premium */
+        margin-bottom: 8px;
+        display: inline-block;
+        color: #f7a01b;              /* Tu naranja vibrante */
+        filter: drop-shadow(0 2px 4px rgba(247, 160, 27, 0.3)); /* Resplandor suave */
+    }
+}
+
+/* Contenedor principal de la sección */
+.how-it-works {
+    padding: 40px 10px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.container-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Títulos */
+.pre-title {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.section-title {
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+.highlight-orange {
+    color: #ff8c00; /* Ajusta al naranja de tu logo */
+}
+
+/* Grid de Pasos - FUERZA UNA SOLA FILA */
+.steps-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5px; /* Espacio mínimo entre columnas */
+}
+
+/* Cada Item del paso */
+.step-item {
+    flex: 1; /* Hace que los 3 midan lo mismo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5px;
+}
+
+/* Ajuste de Imágenes/Iconos */
+.step-visual-premium {
+    width: 100px;  /* Tamaño reducido para que quepan */
+    height: 60px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Textos dentro de los pasos */
+.step-item h3 {
+    font-size: 14px; /* Texto pequeño para evitar saltos de línea feos */
+    font-weight: bold;
+    margin-bottom: 6px;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.step-item p {
+    font-size: 11px; /* Letra pequeña para el cuerpo */
+    line-height: 1.3;
+    color: #444;
+    margin: 0;
+}
+
+/* El conector (la flechita) */
+.step-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25px; /* Alinea la flecha con el centro de la imagen */
+    color: #ccc;
+    font-size: 12px;
+}
+
+/* Ajuste para pantallas extremadamente pequeñas */
+@media (max-width: 360px) {
+    .step-item h3 { font-size: 12px; }
+    .step-item p { font-size: 10px; }
+    .step-visual-premium { width: 50px; height: 50px; }
+}
+
+.video-player-box {
+    max-width: 800px;
+    margin: 30px auto;
+    border: 4px solid #f7a01b; /* Tu color corporativo */
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #000;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+#miVideo {
+    width: 100%;
+    display: block;
+}
+
+.video-info {
+    background-color: #444;
+    padding: 15px;
+    text-align: center;
+}
+
+#tituloActual {
+    color: #fff;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+>>>>>>> 7036d059d6af9877eec3de1ca4f1bb74f13f0ae5
 }
