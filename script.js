@@ -57,3 +57,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+/* Lógica de Ventanas Emergentes - Préstamos 4 Esquinas */
+
+function abrirModal(idModal) {
+    const modal = document.getElementById(idModal);
+    if (modal) {
+        modal.style.display = "block";
+        // Bloqueamos el scroll del fondo para que sea más profesional
+        document.body.style.overflow = "hidden"; 
+    }
+}
+
+function cerrarModal(idModal) {
+    const modal = document.getElementById(idModal);
+    if (modal) {
+        modal.style.display = "none";
+        // Devolvemos el scroll al cerrar
+        document.body.style.overflow = "auto";
+    }
+}
+
+// Cerrar si el usuario toca la parte oscura fuera del cuadro
+window.addEventListener("click", function(event) {
+    if (event.target.className === "modal-p4e") {
+        event.target.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+});

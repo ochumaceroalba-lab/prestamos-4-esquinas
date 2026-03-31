@@ -113,8 +113,7 @@ img {
     height: 50px; /* Un poco más grande para que el contenedor respire */
     width: auto;
     
-    /* EL CONTENEDOR VERDE OSCURO (COMO AYER) */
-    background-color: #0d4d33; /* El verde oscuro exacto de tu marca */
+    
     
     /* Bordes apenas redondeados para dar esa forma cuadrada */
     border-radius: 4px; /* Un valor bajo para esquinas sutiles */
@@ -541,33 +540,26 @@ img {
         letter-spacing: 2px !important;
     }
 }
-@media (min-width: 769px) {
-    /* 1. SECCIÓN PRINCIPAL: Centramos todo el contenido verticalmente */
-    .p4e-video-section {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 60px 0 !important;
-    }
 
-    /* 2. EL TÍTULO: Un poco más de aire */
-    .p4e-video-section h2 {
-       background-color: #195c43 !important; /* Tu verde oficial */
-        color: #ffffff !important;           /* Letras blancas */
-        
-        display: block !important;           /* Ocupa todo el ancho disponible */
-        width: 100% !important;
-        margin: 0 !important;                /* Quitamos márgenes laterales */
-        padding: 40px 0 !important;          /* Espacio arriba y abajo de las letras */
-        
-        font-size: 45px !important;          /* Tamaño grande para PC */
-        text-align: center !important;
-        text-transform: uppercase !important;
-        font-weight: 800 !important;
-        
-        /* Opcional: Sombra interna para dar profundidad */
-        box-shadow: inset 0 10px 20px rgba(0,0,0,0.2);
-    }
+
+
+    /* --- ESTILO BASE (Para laptops y monitores) --- */
+.p4e-video-section h2 {
+    background-color: #195c43 !important;
+    color: #ffffff !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    font-weight: 800 !important;
+    box-shadow: inset 0 10px 20px rgba(0,0,0,0.2);
+
+    /* Ajustes para pantallas GRANDES (Laptops/PC) */
+    padding: 60px 0 !important;   /* Más aire arriba y abajo */
+    font-size: 50px !important;    /* Título mucho más grande y visible */
+    letter-spacing: 2px;           /* Elegancia extra en monitores */
+}
     /* Ajuste para que el video no quede pegado a la franja verde */
     .reproductor-p4e {
         margin-top: 60px !important; 
@@ -592,10 +584,10 @@ img {
     /* 4. EL TEXTO DE ABAJO: Para que no se estire a todo lo ancho de la pantalla */
    /* 1. EL CONTENEDOR PRINCIPAL: Quitamos el límite estrecho */
     .p4e-tasacion-justa {
-        width: 95% !important; /* Ocupa casi todo el ancho de la ventana */
+        width: 100% !important; /* Ocupa casi todo el ancho de la ventana */
         max-width: 100% !important; /* Eliminamos cualquier restricción de ancho */
         margin: 0 auto !important;
-        padding: 60px 5% !important; /* 5% de margen a los lados para que no toque los bordes físicos */
+        padding: 60px 0% !important; /* 5% de margen a los lados para que no toque los bordes físicos */
     }
 
     /* 2. EL DIV INTERNO (MUY IMPORTANTE) */
@@ -608,21 +600,337 @@ img {
 
     /* 3. EL PÁRRAFO: Ahora las líneas serán mucho más largas */
     .p4e-tasacion-justa p {
-        font-size: 22px !important; /* Un poco más pequeño para que quepa más texto por línea */
+        font-size: 20px !important; /* Un poco más pequeño para que quepa más texto por línea */
         line-height: 1.5 !important;
         text-align: justify !important; /* O 'center' si prefieres, pero 'justify' llena más el ancho */
         width: 100% !important;
     }
 
     .p4e-tasacion-justa h3 {
-        font-size: 50px !important; /* Título más grande para acompañar el ancho */
+        font-size: 25px !important; /* Título más grande para acompañar el ancho */
         width: 100% !important;
+    }
+
+    @media screen and (min-width: 1024px) {
+    .p4e-contacto-container {
+        padding: 80px 10%;
+        background-color: #ffffff;
+    }
+
+    .contacto-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .contacto-info {
+        flex: 1.2; /* Le damos un poco más de espacio al texto */
+        min-width: 400px;
+    }
+
+    .contacto-titulo-verde {
+        color: #195c43;
+        font-size: 32px;
+        font-weight: 900;
+        margin-bottom: 20px;
+    }
+
+    .info-items p {
+        font-size: 18px;
+        margin: 15px 0;
+        color: #333;
+    }
+
+    .btn-gps {
+        display: inline-block;
+        background-color: #195c43;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 5px;
+        text-decoration: none !important;  /* Quita el subrayado azul */
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    /* Columna Mapa (Derecha - Achicado) */
+    .contacto-mapa {
+        flex: 1; /* El mapa mantendrá un buen tamaño */
+        min-width: 450px; /* Esto evita que se vea pequeño como en tu captura */
+    }
+
+    .mapa-titulo {
+        color: #195c43;
+        font-size: 18px;
+        border-bottom: 2px solid #f7a01b; /* Línea naranja de tu imagen */
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    .mapa-recuadro {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .mapa-recuadro iframe {
+        height: 450px; /* Mapa más alto para que sea cuadrado y grande */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 }
     
 
+ @media screen and (max-width: 1023px) {
+    .contacto-flex {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
     
+    .contacto-mapa {
+        margin-top: 40px;
+        width: 100%;
+    }
+    /* Esto obligará al botón de GPS a ser verde con letras blancas en el celular */
+.btn-gps {
+    background-color: #195c43 !important; /* Tu verde oficial */
+    color: #ffffff !important;            /* Blanco puro */
+    text-decoration: none !important;     /* Quita el subrayado azul */
+    
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 50px;                  /* Forma de cápsula como en tu imagen */
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 20px;
+    
+    /* Evita que el navegador cambie el color al tocarlo */
+    -webkit-tap-highlight-color: transparent;
+}
 
+/* IMPORTANTE: Evita que el color cambie si ya se hizo clic antes */
+.btn-gps:visited, 
+.btn-gps:active, 
+.btn-gps:focus {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+}   
+
+
+.p4e-footer-referencia {
+    background-color: #1a4d3a; /* Verde oscuro de la imagen */
+    color: #ffffff;
+    padding: 80px 0 0 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px 60px 20px;
+}
+
+.footer-block {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+}
+
+/* Bloque del Logo e Iconos */
+.info-empresa {
+    flex: 1.5;
+    padding-right: 40px;
+}
+
+.footer-logo-img {
+    width: 80px; /* Ajusta según tu logo */
+    margin-bottom: 20px;
+}
+
+.info-empresa p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 25px;
+}
+
+.iconos-sociales {
+    display: flex;
+    gap: 10px;
+}
+
+.social-circle {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.social-circle:hover {
+    background-color: #f7a01b; /* Naranja al pasar el mouse */
+}
+
+/* Títulos y Listas */
+.footer-block h3 {
+    color: #f7a01b; /* Naranja oficial */
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.footer-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-block ul li, .footer-block p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 12px;
+}
+
+.horas {
+    color: rgba(255,255,255,0.5);
+}
+
+.footer-divider {
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin: 20px 0;
+}
+
+/* Barra Inferior */
+.footer-bottom {
+    background-color: rgba(0,0,0,0.1);
+    padding: 25px 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+}
+
+.bottom-links span {
+    margin-left: 20px;
+}
+
+/* Responsive para Celular */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .info-empresa {
+        padding-right: 0;
+        margin-bottom: 50px;
+    }
+    .iconos-sociales {
+        justify-content: center;
+    }
+    .bottom-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+
+
+/* +++++++++CONTENEDOR DE ICONOS+++++++ */
+
+.iconos-sociales-premium {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Estilo base para todos los iconos */
+.social-icon {
+    width: 42px; /* Un tamaño cómodo para el dedo en el celular */
+    height: 42px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo muy sutil */
+    border-radius: 50%; /* Círculos perfectos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.social-icon i {
+    font-size: 20px; /* Tamaño del logo interno */
+    color: rgba(255, 255, 255, 0.8); /* Blanco transparente por defecto */
+}
+
+/* --- COLORES OFICIALES AL PASAR EL MOUSE (HOVER) --- */
+
+/* Facebook (Azul oficial) */
+.social-icon.facebook:hover {
+    background-color: #1877F2;
+    border-color: #1877F2;
+}
+.social-icon.facebook:hover i { color: white; }
+
+/* Instagram (Degradado característico) */
+.social-icon.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-color: transparent;
+}
+.social-icon.instagram:hover i { color: white; }
+
+/* TikTok (Negro con efecto de neón) */
+.social-icon.tiktok:hover {
+    background-color: #000000;
+    border-color: #000000;
+    box-shadow: 2px 2px 0px #ff0050, -2px -2px 0px #00f2ea; /* Efecto de color de TikTok */
+}
+.social-icon.tiktok:hover i { color: white; }
+
+/* WhatsApp (Verde oficial) */
+.social-icon.whatsapp:hover {
+    background-color: #25D366;
+    border-color: #25D366;
+}
+.social-icon.whatsapp:hover i { color: white; }
+
+/* Pequeño salto al pasar el mouse */
+.social-icon:hover {
+    transform: translateY(-4px);
+}
+/* --- ESTILO LOGO FLOTANTE FOOTER --- */
+.p4e-logo-footer-flotante {
+    width: 90px; /* Tamaño ideal para que se vea importante */
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    
+    /* Esta es la MAGIA: crea una sombra blanca suave alrededor del número */
+    /* para que el verde del logo no se pierda con el verde del fondo */
+    filter: drop-shadow(0px 4px 10px rgba(255, 255, 255, 0.3));
+    
+    transition: transform 0.3s ease;
+}
+
+.p4e-logo-footer-flotante:hover {
+    /* Un pequeño efecto al pasar el mouse para que se sienta vivo */
+    transform: scale(1.05) rotate(2deg);
+    filter: drop-shadow(0px 6px 15px rgba(247, 160, 27, 0.5)); /* Brillo naranja */
+}
 
 
 
@@ -949,10 +1257,31 @@ img {
 
 /* Ajuste para pantallas extremadamente pequeñas */
 @media (max-width: 360px) {
-    .step-item h3 { font-size: 12px; }
-    .step-item p { font-size: 10px; }
+    .step-item h3 { font-size: 5px; }
+    .step-item p { font-size: 5px; }
     .step-visual-premium { width: 50px; height: 50px; }
 }
+.p4e-video-section h2 {
+       background-color: #195c43 !important; /* Tu verde oficial */
+        color: #ffffff !important;           /* Letras blancas */
+        
+        display: block !important;           /* Ocupa todo el ancho disponible */
+        width: 100% !important;
+        margin: 0 !important;                /* Quitamos márgenes laterales */
+        padding: 40px 0 !important;          /* Espacio arriba y abajo de las letras */
+        
+        font-size: 20px !important;          /* Tamaño grande para PC */
+        text-align: center !important;
+        text-transform: uppercase !important;
+        font-weight: 800 !important;
+        
+        /* Opcional: Sombra interna para dar profundidad */
+        box-shadow: inset 0 10px 20px rgba(0,0,0,0.2);
+    }
+    /* Ajuste para que el video no quede pegado a la franja verde */
+    .reproductor-p4e {
+        margin-top: 60px !important; 
+    }
 
 .video-player-box {
     max-width: 800px;
@@ -978,11 +1307,10 @@ img {
 #tituloActual {
     color: #fff;
     margin: 0;
-    font-size: 16px;
+    font-size: 10px;
     font-weight: 700;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 
 
 
@@ -1170,4 +1498,84 @@ img {
 /* Ajuste extra para el botón */
 .p4e-btn-whatsapp {
     margin: 0 auto; /* Refuerza el centrado */
+}
+
+
+
+
+/* --- ESTILOS PARA CELULAR (Mobile First) --- */
+.p4e-nosotros-section {
+    padding: 100px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.titulo-nosotros {
+    color: #195c43; /* Verde oficial */
+    font-size: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.subtitulo-nosotros {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 35px;
+}
+
+/* Botones apilados verticalmente para celular */
+.botones-nosotros-grid {
+    display: flex;
+    flex-direction: row; /* Fuerza la fila */
+    justify-content: center; /* Los centra en la pantalla */
+    gap: 8px; /* Espacio pequeño entre botones para que quepan */
+    padding: 0 5px;
+    width: 50%;
+    margin: 0 auto; /* ¡ESTA ES LA CLAVE! Centra el contenedor en la pantalla */
+}
+
+.btn-p4e {
+    background-color: #f7a01b; /* Naranja oficial */
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Ventanas Modales */
+.modal-p4e {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-contenido {
+    background-color: #fff;
+    margin: 30% auto;
+    padding: 30px 20px;
+    border-radius: 15px;
+    width: 85%;
+    position: relative;
+    max-height: 80% !important; /* No deja que la ventana se salga de la pantalla */
+    overflow-y: auto !important; /* Activa el scroll si el texto es largo */
+    padding-bottom: 40px !important; /* Espacio extra al final */
+}
+
+.cerrar {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #aaa;
 }

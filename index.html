@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="style.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head> <body>
 
   <header class="p4e-header">
-    <a href="#" class="p4e-logo-container">
-      <img src="imagenes/ESQUINAS S.R.L.png" class="p4e-logo-img">
+    <a href="index.html" class="p4e-logo-container">
+      <img src="imagenes/logo4esquinas.png" class="p4e-logo-img">
       <div class="p4e-brand-name">
         <span class="p4e-title">PRÉSTAMOS 4 ESQUINAS</span>
         <span class="p4e-subtitle">S.R.L.</span>
@@ -39,7 +41,11 @@
       </ul>
     </nav>
 
-    <a href="#" class="p4e-cta-button">Cotizar Ahora</a>
+    <a href="https://wa.me/59177350248?text=Hola,%20vi%20su%20página%20y%20quiero%20cotizar%20un%20préstamo%20ahora%20mismo." 
+   class="p4e-cta-button" 
+   target="_blank">
+   Cotizar Ahora
+</a>
   </header>
 
   <main>
@@ -56,8 +62,12 @@
         </p>
 
         <div class="hero-btns">
-          <a href="#" class="btn-primary">Solicitar Préstamo</a>
-          <a href="#" class="btn-secondary">Ver Cómo Funciona</a>
+          <a href="https://wa.me/59177350248?text=Hola%20Préstamos%204%20Esquinas,%20necesito%20solicitar%20un%20préstamo%20urgente%20sobre%20un%20objeto." 
+   class="btn-primary" 
+   target="_blank">
+   Solicitar Préstamo
+</a>
+          <a href="#how-it-works" class="btn-secondary">Ver Cómo Funciona</a>
         </div>
       </div>
       <img src="imagenes/objetos.png" class="img-objetos" alt="Objetos de valor">
@@ -127,23 +137,21 @@
     
     <div class="reproductor-p4e">
     <video id="miVideo" controls preload="metadata" style="width: 100%; border-radius: 10px; background-color: #000;">
-        <source id="fuenteVideo" src="videos/video1presentacioncomprimido.webm" type="video/mp4">
+        <source id="fuenteVideo" src="videos/video1presentacioncomprimido.webm" type="video/webm">
     </video>
-    <p id="tituloActual" style="text-align: center; font-weight: bold; color: #f7a01b;">
-        Obten dinero en instantes
-    </p>
+    
 </div>
 
-<div class="p4e-tasacion-justa" style="text-align: center; padding: 60px 20px; background-color: #ffffff; border-top: 2px solid #f7a01b;">
+<div class="p4e-tasacion-justa" style="text-align: center; padding: 60px 20px; background-color: #ffffff;">
     <div style="max-width: 800px; margin: 0 auto;">
         
-        <h3 style="color: #f7a01b; font-size: 1.8rem; font-weight: 900; margin-bottom: 15px; text-transform: uppercase;">
+        <h3 style="color: #413b31; font-size: 1.8rem; font-weight: 900; margin-bottom: 15px; text-transform: uppercase;">
             Valoramos lo que es tuyo
         </h3>
 
         <p style="font-size: 1.4rem; color: #444; line-height: 1.6; font-weight: 500; text-align: justify; margin-bottom: 20px;">
             Sabemos que detrás de cada prenda hay un esfuerzo y una historia. Por eso, en <b>Préstamos 4 Esquinas</b> nos comprometemos a ofrecerte la 
-            <span style="color: #f7a01b; font-weight: 800;">tasación más alta del mercado</span>. 
+            <span style="color: #413b31; font-weight: 800;">tasación más alta del mercado</span>. 
             No dejamos que tu necesidad baje el valor de tus bienes; al contrario, evaluamos con honestidad y profesionalismo para que recibas el dinero justo que mereces.
         </p>   
 
@@ -200,17 +208,172 @@
                 </div>
             </div>
         </div>
-
         <div class="p4e-cta-container">
-            <a href="https://wa.me/TU_NUMERO" class="p4e-btn-whatsapp" target="_blank">
-                <i class="fab fa-whatsapp"></i> COTIZAR MI EMPEÑO
-            </a>
+    <a href="https://wa.me/59177350248?text=Hola%20Préstamos%204%20Esquinas,%20me%20gustaría%20cotizar%20un%20objeto%20de%20valor." 
+       class="p4e-btn-whatsapp" 
+       target="_blank">
+        <i class="fab fa-whatsapp"></i> COTIZAR MI EMPEÑO
+    </a>
+</div>
+    </div>
+</section>
+
+
+
+<section id="p4e-nosotros" class="p4e-nosotros-section">
+    <div class="container-nosotros">
+        <h2 class="titulo-nosotros">NOSOTROS</h2>
+        <p class="subtitulo-nosotros">Somos una empresa cruceña comprometida con el bienestar de nuestra gente, especializada en préstamos prendarios ágiles, accesibles y, sobre todo, humanos. Nacimos con la visión de ofrecer al mercado de Santa Cruz una alternativa financiera real, donde lo más importante no es el objeto, sino la historia y el esfuerzo que hay detrás de él.
+
+Más que una casa de préstamos, somos una familia dedicada a darte la mano cuando más lo necesitas. Entendemos que la vida presenta retos inesperados; por eso, nuestro compromiso es ofrecerte créditos inmediatos que te ayuden a cubrir gastos médicos, facturas, estudios o ese impulso extra que tu negocio necesita para seguir creciendo.
+
+En Préstamos 4 Esquinas, no dejamos que una urgencia baje el valor de tus bienes. Trabajamos con honestidad y profesionalismo para garantizarte la tasación más alta del mercado, brindándote soluciones seguras y el respeto que te mereces. Estamos aquí para ayudarte a avanzar.</p>
+        
+        <div class="botones-nosotros-grid">
+            <button class="btn-p4e" onclick="abrirModal('modal-mision')">Nuestra Misión</button>
+            <button class="btn-p4e" onclick="abrirModal('modal-vision')">Nuestra Visión</button>
+            <button class="btn-p4e" onclick="abrirModal('modal-valores')">Nuestros Valores</button>
+        </div>
+    </div>
+
+    <div id="modal-mision" class="modal-p4e">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal('modal-mision')">&times;</span>
+            <h3>Nuestra Misión</h3>
+            <p>Brindar servicios pignorativos accesibles, oportunos y confiables a la población, satisfaciendo sus necesidades de liquidez, mediante créditos con garantías prendarias y de calidad, que contribuya a su estabilidad económica y financiera, y mejorar en su calidad de vida.</p>
+        </div>
+    </div>
+
+    <div id="modal-vision" class="modal-p4e">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal('modal-vision')">&times;</span>
+            <h3>Nuestra Visión</h3>
+            <p>Ser una empresa líder en servicios pignoraticios y créditos prendarios, reconocida por su solidez económica-financiera y confianza, contribuyendo al desarrollo económico de la población.</p>
+        </div>
+    </div>
+
+    <div id="modal-valores" class="modal-p4e">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal('modal-valores')">&times;</span>
+            <h3>Nuestros Valores</h3>
+            <ul>
+                <li><strong>Transparencia:</strong> Actuamos con claridad, honestidad y veracidad en todas nuestras operaciones, informando de manera comprensible las condiciones de los créditos, tasas, plazos y garantías, fortaleciendo la confianza de nuestros clientes.</li>
+                <li><strong>Confianza:</strong> Construimos relaciones sólidas y duraderas basadas en el cumplimiento de nuestros compromisos, el respeto y la seguridad en el resguardo de los bienes recibidos en garantía.</li>
+                <li><strong>Responsabilidad:</strong> Otorgamos créditos de manera responsable, evaluando adecuadamente las garantías prendarias y la capacidad del cliente, promoviendo soluciones financieras que no comprometan su estabilidad económica.</li>
+                <li><strong>Respeto:</strong> Tratamos a todos nuestros clientes con dignidad, empatía y consideración, valorando sus bienes y circunstancias personales sin discriminación alguna.</li>
+                <li><strong>Seguridad:</strong> Garantizamos el resguardo, custodia y conservación adecuada de los bienes de línea blanca y línea negra entregados en garantía, aplicando procedimientos claros y controles internos estrictos.</li>
+            </ul>
         </div>
     </div>
 </section>
 
 
 
+<section id="p4e-contacto" class="p4e-contacto-container">
+    <div class="contacto-flex">
+        <div class="contacto-info">
+            <h2 class="contacto-titulo-verde">¡CONTÁCTANOS AHORA!</h2>
+            <p class="contacto-subtitulo">Para consultas, estamos disponibles en:</p>
+            
+            <div class="info-items">
+                <p>📞 <strong>Teléfonos:</strong> 77350248 - 74669663</p>
+                <p>📍 <strong>Ubicación:</strong> Av. MOSCU 5to ANILLO intersección a la Av. María Auxiliadora (Zona La Cuchilla)</p>
+            </div>
+
+            <a href="https://maps.app.goo.gl/WoZaDbQgVvH7EgRf7" target="_blank" class="btn-gps">
+                📍 CÓMO LLEGAR (ABRIR GPS)
+            </a>
+        </div>
+
+        <div class="contacto-mapa">
+            <div class="mapa-recuadro">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d474.7761063310389!2d-63.20297654942313!3d-17.828841818639034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e9d6272981d3%3A0xd505dea28a163702!2sPRESTAMOS%204%20ESQUINAS%20SRL.!5e0!3m2!1ses-419!2sbo!4v1768529414357!5m2!1ses-419!2sbo" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0; border-radius: 15px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="p4e-footer-referencia">
+    <div class="footer-container">
+        <div class="footer-block info-empresa">
+    <img src="imagenes/logo4esquinas.png" alt="Logo Préstamos 4 Esquinas" class="p4e-logo-footer-flotante">
+    
+    <p>Préstamos rápidos y seguros sobre objetos de valor. Tu solución financiera de confianza desde hace más de 15 años.</p>
+    
+    <div class="iconos-sociales">
+        <a href="https://www.facebook.com/share/1HfjXU1abb/" target="_blank" class="social-icon facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    
+        <a href="https://www.instagram.com/4esquinasrl?igsh=MXB3Z3I3NGNybjI1dg==" target="_blank" class="social-icon instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    
+        <a href="https://www.tiktok.com/@4.esquinas.srl?_r=1&_t=ZS-959jf2o0UnQ" target="_blank" class="social-icon tiktok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    
+        <a href="https://wa.me/59177350248" target="_blank" class="social-icon whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+</div>
+
+        <div class="footer-block">
+            <h3>NAVEGACIÓN</h3>
+            <ul>
+                <li>Inicio</li>
+                <li>Cómo funciona</li>
+                <li>Servicios</li>
+                <li>Seguridad</li>
+                <li>Contacto</li>
+            </ul>
+        </div>
+
+        <div class="footer-block">
+            <h3>SERVICIOS</h3>
+            <ul>
+                <li>Electrodomésticos</li>
+                <li>Joyas de Oro</li>
+                <li>Celulares</li>
+                <li>Computadoras portátiles</li>
+                <li>Garrafas</li>
+                <li>Otros objetos</li>
+            </ul>
+        </div>
+
+        <div class="footer-block">
+            <h3>HORARIOS</h3>
+            <p><strong>Lunes a Viernes</strong><br><span class="horas">8:00 - 12:00</span></p>
+            <span class="horas">14:00 - 18:00</span></p>
+            <p><strong>Sábados</strong><br><span class="horas">8:00 - 14:00</span></p>
+            <p><strong>Domingos y feriados</strong><br><span class="horas">Cerrado</span></p>
+            <hr class="footer-divider">
+            <p class="contacto-directo">📞 +591 77350248</p>
+            <p class="contacto-directo">📍 Av. Moscú, 5to Anillo</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="bottom-content">
+            <p>© 2026 Préstamos 4 Esquinas SRL. Todos los derechos reservados.</p>
+            <div class="bottom-links">
+                <span>Términos y Condiciones</span>
+                <span>Política de Privacidad</span>
+            </div>
+        </div>
+    </div>
+</footer>
   </main>
 <script src="script.js"></script>
 </body> 
