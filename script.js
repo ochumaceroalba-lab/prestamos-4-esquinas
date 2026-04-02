@@ -5,39 +5,22 @@ const etiquetaTitulo = document.getElementById('tituloActual');
 
 // Lista exacta de tus 5 videos
 const listaDeVideos = [
-    { archivo: 'videos/video1presentacioncomprimido.webm', nombre: 'Presentación Institucional' },
-    { archivo: 'videos/pasos123.webm', nombre: 'Solicitud de Crédito' },
-    { archivo: 'videos/videoelectrodomesticos.webm', nombre: '' },
+    { archivo: 'videos/pasos1234.mp4', nombre: 'Presentación Institucional' },
+   
    
 ];
+// Lógica simple para el video único de P4E
+const miVideo = document.getElementById('miVideo');
 
-// 3. Empezamos en el video 0 (el primero de la lista)
-let indiceActual = 0;
+if (miVideo) {
+    miVideo.onended = function() {
+        console.log("Video de presentación finalizado.");
+        // Opcional: Si quieres que se repita solo, descomenta la siguiente línea:
+        // miVideo.play(); 
+    };
+}
 
-reproductor.onended = function() {
-    indiceActual++; // Intentamos pasar al siguiente video
 
-    if (indiceActual < listaDeVideos.length) {
-        // --- CASO A: Aún hay videos en la lista ---
-        fuente.src = listaDeVideos[indiceActual].archivo;
-        etiquetaTitulo.innerText = "" + listaDeVideos[indiceActual].nombre;
-        
-        reproductor.load();
-        reproductor.play();
-    } else {
-        // --- FIN DE LA LISTA (Opción del usuario) ---
-        console.log("Secuencia terminada. Esperando al usuario.");
-        
-        indiceActual = 0; // Reseteamos al primer video
-        fuente.src = listaDeVideos[indiceActual].archivo;
-        etiquetaTitulo.innerText = "¡Has visto todo! Haz clic en Play para repetir.";
-        
-        reproductor.load(); 
-        // NO ponemos reproductor.play(), así se queda quieto con el poster inicial
-    }
-
-    
-};
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Buscamos el checkbox usando el ID exacto de tu HTML: "menu-toggle"

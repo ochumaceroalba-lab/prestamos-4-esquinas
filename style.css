@@ -25,7 +25,7 @@ section {
     box-sizing: border-box; /* Asegura que el padding no estire las cajas */
 }
 
-/*Este codigo evita que se vaya todo al demonio fuera de rango en las imagenes y textos no borrar por nada*/
+/*--------Este codigo evita que se vaya todo al demonio fuera de rango en las imagenes y textos no borrar por nada------*/
 img {
     max-width: 100%; /* Ninguna imagen puede ser más ancha que su caja */
     height: auto;
@@ -78,9 +78,9 @@ img {
     display: block;
 }
 
-/* =========================================
-   2. ENCABEZADO (ESTILO ESCRITORIO)
-   ========================================= */
+                                /* =========================================
+                                         2. ENCABEZADO (ESTILO ESCRITORIO)
+                                  ========================================= */
 /* --- HEADER FIJO Y LIMPIO --- */
 .p4e-header {
     display: flex;
@@ -101,7 +101,7 @@ img {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra sutil para que se vea pro */
 }
 
-/* --- EL LOGO CUADRADO DE AYER (RÉPLICA EXACTA) --- */
+/* ----------------------------- EL LOGO CUADRADO DE AYER (RÉPLICA EXACTA) --------------------------------------------- */
 .p4e-logo-container {
     display: flex;
     align-items: center;
@@ -160,7 +160,7 @@ img {
     font-weight: 500;
 }
 
-/* --- BOTÓN COTIZAR (EL NARANJA DE LA IMAGEN) --- */
+/* ----------------------- BOTÓN COTIZAR (EL NARANJA DE LA IMAGEN) --------------------- */
 .p4e-cta-button {
     background-color: #f7a01b;
     color: #fff;
@@ -180,7 +180,7 @@ img {
 }
 
 
-/* --- SOLO PARA PC --- */
+/* ----------------------MENU DE HAMBURGUESA SOLO PARA PC ------------------------------ */
 @media (min-width: 769px) {
     .p4e-nav-links {
         display: flex; /* Aquí se ve normal en la computadora */
@@ -251,10 +251,10 @@ img {
     }
 }
 
-/* =========================================
-   AJUSTE DE POSICIÓN HERO (PC)
-   Mano (Izquierda) - Texto (Centro) - Objetos (Derecha)
-   ========================================= */
+                        /*  =========================================
+                                  AJUSTE DE POSICIÓN HERO (PC)
+                         Mano (Izquierda) - Texto (Centro) - Objetos (Derecha)
+                            ========================================= */
 
 @media (min-width: 769px) {
     .hero {
@@ -363,13 +363,13 @@ img {
         position: absolute;  /* Flota sobre el verde */
         
         /* --- AJUSTE HORIZONTAL --- */
-        right: -250px;        /* LA CLAVE: Un número negativo para que "salga" de la pantalla por la derecha */
+        right: -240px;        /* LA CLAVE: Un número negativo para que "salga" de la pantalla por la derecha */
         
         /* --- AJUSTE VERTICAL --- */
-        bottom: 24%;         /* Súbelo o bájalo cambiando este % (ej: 20%, 30%) */
+        bottom: 30%;         /* Súbelo o bájalo cambiando este % (ej: 20%, 30%) */
         
         /* --- TAMAÑO FIJO --- */
-        width: 950px;        /* Controla qué tan grande se ve la laptop en el móvil */
+        width: 830px;        /* Controla qué tan grande se ve la laptop en el móvil */
         
         z-index: 1;          /* Queda detrás del texto si se llegan a tocar */
         display: flex;
@@ -383,7 +383,7 @@ img {
     }
 
 } 
-/* 1. EL CONTENEDOR DE LAS TARJETAS (Caja de Vidrio) */
+/* ----------------------------- EL CONTENEDOR DE LAS TARJETAS (Caja de Vidrio) ---------------------------------- */
    
     /* 4. LA CUADRÍCULA DE BENEFICIOS (LAS TARJETAS INDIVIDUALES - ABAJO DEL TODO) */
     .features-grid {
@@ -447,6 +447,9 @@ img {
         filter: drop-shadow(0 2px 4px rgba(247, 160, 27, 0.3)); /* Resplandor suave */
     }
 
+
+
+    /* ------------------------FORZAMOS EL ANCHO DE LA SECCION PARA LOS 3 PASOS A SEGUIR ---------------------------- */
     @media (min-width: 769px) {
     /* FORZAMOS EL TAMAÑO DE LA SECCIÓN */
     .how-it-works {
@@ -543,7 +546,7 @@ img {
 
 
 
-    /* --- ESTILO BASE (Para laptops y monitores) --- */
+    /* --- ESTILO BASE VIDEOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO (Para laptops y monitores) --- */
 .p4e-video-section h2 {
     background-color: #195c43 !important;
     color: #ffffff !important;
@@ -1398,7 +1401,7 @@ img {
 /* --- IMÁGENES PARA LOS OCTÁGONOS --- */
 
 .p4e-piece-tv { 
-    background-image: url('imagenes/televisores.png'); 
+    background-image: url('imagenes/joyas.png');
     background-size: cover;
     background-position: center;
 }
@@ -1428,7 +1431,7 @@ img {
 }
 
 .p4e-piece-joyas { 
-    background-image: url('imagenes/joyas.png'); 
+    background-image: url('imagenes/televisores.png');
     background-size: cover;
     background-position: center;
 }
